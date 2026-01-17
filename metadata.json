@@ -1,0 +1,7 @@
+{
+  "name": "Pac-Card Animator",
+  "description": "A retro-styled animated card creator inspired by arcade classics.",
+  "requestFramePermissions": [
+    "display-capture"
+  ]
+}
