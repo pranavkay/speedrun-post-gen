@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- THEMES --- */
+      
+/* Pacman: Arcade Blue */
+.bg-theme-pacman {
+  background-color: #5ac4f3;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+}
+
+/* Snake: Purple */
+.bg-theme-snake {
+  background-color: #a569bd;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+}
+
+/* Mario: Green */
+.bg-theme-mario {
+  background-color: #74c365;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+}
+
+.font-arcade {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* --- ANIMATIONS --- */
+
+/* Pacman Animations */
+@keyframes chompy-top {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-35deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes chompy-bottom {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(35deg); }
+  100% { transform: rotate(0deg); }
+}
+.pacman-jaw-top {
+  transform-origin: center;
+  animation: chompy-top 0.6s infinite ease-in-out;
+}
+.pacman-jaw-bottom {
+  transform-origin: center;
+  animation: chompy-bottom 0.6s infinite ease-in-out;
+}
+
+/* Snake Animations */
+@keyframes snake-crawl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+.snake-body {
+  animation: snake-crawl 1s infinite linear;
+}
+@keyframes snake-tail-flick {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+}
+.snake-tail {
+  animation: snake-tail-flick 0.5s infinite steps(2);
+}
+
+/* Mario Animations */
+@keyframes mario-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.mario-sprite {
+  animation: mario-bounce 0.8s infinite ease-in-out;
+}
